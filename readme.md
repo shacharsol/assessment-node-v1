@@ -31,7 +31,7 @@ After finishing your assessment, the candidate must do the following:
 
 1. Delete the `node_modules` folders.
 2. Compress all the remaining files in this folder into any compressed format (`.zip`, `.rar`, `.tar`, `.gz`, or any).
-3. Send the file back to us via Email. 
+3. Send the file back to us via Email.
 
 **Please note that**, editing any of the irrelevant files (Outside of `src/part1` and `src/part2`) may affect your assessment result.
 
@@ -125,7 +125,7 @@ break 2
 
 ==== 5 minutes passed ====
 
-Start pomo 3 
+Start pomo 3
 
 ==== 25 minutes passed ====
 
@@ -161,7 +161,7 @@ computePomodoro("2018-06-01T08:18:12.907Z", "2018-06-01T09:14:12.907Z")
 // -> return 2
 
 computePomodoro("2018-06-01T08:40:39.024Z", "2018-06-01T11:21:54.099Z")
-// -> return 5 
+// -> return 5
 
 ```
 
@@ -192,7 +192,7 @@ The Web server will start through port 3000, and you are good to go.
 Same as part1, the evaluation can execute through
 
 ```bash
-npm run test-part1
+npm run test-part2
 ```
 
 ## 1. A bunch of readmes
@@ -203,7 +203,7 @@ In the folder `files/readme` contains several text files with a specific name, w
 GET /file/:filename
 ```
 
-The `filename` should be the file name in the `files/readme` folder on which the API should read. 
+The `filename` should be the file name in the `files/readme` folder on which the API should read.
 
 The response should return file name, string character count, and the content of the file in JSON format like this:
 
@@ -256,7 +256,7 @@ GET /users
 At the moment, the API only return dump user object.
 
 ```json
-[  
+[
   {
       "_id": "the-id",
       "isActive": true,

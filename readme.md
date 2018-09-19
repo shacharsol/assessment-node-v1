@@ -200,7 +200,7 @@ npm run test-part2
 In the folder `files/readme` contains several text files with a specific name, write an API with the spec.
 
 ```
-GET /file/:filename
+GET /files/:filename
 ```
 
 The `filename` should be the file name in the `files/readme` folder on which the API should read.
@@ -218,7 +218,7 @@ The response should return file name, string character count, and the content of
 for example,
 
 ```
-GET /file/hello-world.txt
+GET /files/hello-world.txt
 ```
 
 should return

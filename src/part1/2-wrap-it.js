@@ -1,4 +1,8 @@
 
 export default function transformArgumentsToArray(transformingFunction) {
-	// go for it!!
+	return function(){  
+		return  transformingFunction.apply( this,...arguments );
+	   
+	  }
 }
+

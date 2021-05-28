@@ -1,9 +1,7 @@
-
-export default function transformArgumentsToArray(transformingFunction) {
-	
+const transformArgumentsToArray = (transformingFunction) => {
 	return function(){  
-		return  transformingFunction.apply( this,...arguments );
-	   
+		return  transformingFunction.apply( this,...arguments );	   
 	  }
 }
-
+  
+export default transformArgumentsToArray

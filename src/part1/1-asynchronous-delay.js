@@ -1,4 +1,6 @@
-
-export default function asynchronousDelay(delay, callback) {
-	setTimeout(callback,delay);
+const asynchronousDelay = (delay, callback) => {
+	setTimeout(() => callback(), delay); 
 }
+  
+export default asynchronousDelay
+

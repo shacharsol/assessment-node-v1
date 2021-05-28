@@ -4,41 +4,41 @@ import fs from "fs";
 
 const router = express.Router();
 const basePath = process.cwd();
-const filesBasePath = basePath+"/"+"files/readme/";
+const filesBasePath = basePath + "/" + "files/readme/";
 /* GET /files/:fileName */
 
 
-router.get('/:fileName', async (req,res,next)=> { 
+router.get('/:fileName', async (req, res, next) => {
   let file = req.params.fileName;
-  let fileMetadata = await getFileMetadata(filesBasePath,file);
-  if (!fileMetadata){
+  let fileMetadata = await getFileMetadata(filesBasePath, file);
+  if (!fileMetadata) {
     return res.status(404).send({
-      "error": "file not found!", 
+      "error": "file not found!",
       "code": 404
-    })       
+    })
   }
   return res.status(200).send({
     filename: file,
     length: fileMetadata.length,
     content: fileMetadata
-    })
-  }
-  
+  })
+}
+
 )
 
-const getFileMetadata = async (filesBasePath,file)=>{
-  let filePath = filesBasePath+file;
+const getFileMetadata = async (filesBasePath, file) => {
+  let filePath = filesBasePath + file;
   try {
-    
-      return await fs.promises.readFile(filePath,"utf-8");
+
+    return await fs.promises.readFile(filePath, "utf-8");
   }
-  catch(err){
+  catch (err) {
     if (err.code !== 'ENOENT') throw err;
     return false;
   }
-    
+
 }
-  
+
 
 
 export default router

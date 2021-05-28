@@ -5,12 +5,11 @@ import fs from "fs";
 const router = express.Router();
 const basePath = process.cwd();
 const filesBasePath = basePath + "/" + "files/readme/";
+
 /* GET /files/:fileName */
-
-
 router.get('/:fileName', async (req, res, next) => {
   let file = req.params.fileName;
-  let fileMetadata = await getFileMetadata(filesBasePath, file);
+  let fileMetadata = await getFileMetadata(file);
   if (!fileMetadata) {
     return res.status(404).send({
       "error": "file not found!",
@@ -22,11 +21,11 @@ router.get('/:fileName', async (req, res, next) => {
     length: fileMetadata.length,
     content: fileMetadata
   })
-}
+});
 
-)
 
-const getFileMetadata = async (filesBasePath, file) => {
+/** gets file metadata from file */
+const getFileMetadata = async (file) => {
   let filePath = filesBasePath + file;
   try {
 
@@ -38,7 +37,5 @@ const getFileMetadata = async (filesBasePath, file) => {
   }
 
 }
-
-
 
 export default router

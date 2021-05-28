@@ -1,4 +1,4 @@
 
-export default async function asynchronousDelay(delay, callback) {
+export default function asynchronousDelay(delay, callback) {
 	setTimeout(callback,delay);
 }
